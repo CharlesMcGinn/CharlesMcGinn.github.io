@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel = "stylesheet" type = "text/css" href = "fonts.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "test1styles.css"/>
+</head>
+  
+<body>
+<!--Mouse body stuff-->
+<div style="z-index:-1;display:none;">
+<svg>
+  <symbol id="arrow" viewBox="0 0 10 10"  top="0" left="0">
+    <g transform="translate(0,-288.53334)">
+      <path style="fill:grey;stroke:#000000;stroke-width:0;stroke-opacity:1;" d="M8 295C5 294 6 296 7 298l-5-7">
+      <animate attributeName="d" values="M 5 292 C 5 291 0 291 3 294 l 0 0 C 7 298 5 293 5 292 L 5 292 Z;M 6 293 C 8 292 4 290 3 292 l 0 0 C 2 294 4 294 6 293 L 6 293 Z;M 6 293 C 9 291 5 289 4 291 l 0 0 C 3 293 3 295 6 293 L 6 293 Z;M 3 293 C 4 294 7 292 5 291 l 0 0 C 3 290 0 290 3 293 L 3 293 Z;M 5 291 C 5 293 5 297 7 293 l 0 0 C 9 289 5 289 5 291 L 5 291 Z;M 5 292 C 5 290 0 291 3 294 l 0 0 C 6 297 5 293 5 292 L 5 292 Z;" dur="5s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </symbol>
+</svg>
+</div>
+
+<svg id="arrowCanvas" width="60" height="60">
+  <use href="#arrow" width="50" height="50"/>
+</svg>
+<!--End mouse body stuff-->   
+    
+<header>
+	<nav>
+    <div>
+  	<a class="nav-pages" href="index.html">Charles McGinn</a>
+    </div>
+    <div>
+    <a class="nav-pages" href="test1.html">Portfolio</a>
+    <a class="nav-pages" href="about.html">About</a>
+    <a class="nav-pages" href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+<hr class="dotted">
+<br><br><br><br>
+
+
+<div class="bigstar">
+<div class="sectiontitle">Designs</div>
+<figure class="star">
+    <img src="networkbackground.jpg" alt="Portfolio Item">
+    <figcaption>
+        <h3>Title</h3>
+        <p>Description.</p>
+    </figcaption>
+</figure>
+
+<figure class="star">
+    <img src="networkbackground.jpg" alt="Portfolio Item">
+    <figcaption>
+        <h3>Title</h3>
+        <p>Description.</p>
+    </figcaption>
+</figure>
+
+<figure class="star">
+    <img src="http://lorempixel.com/192/96/sports/3" alt="Portfolio Item">
+    <figcaption>
+        <h3>Title</h3>
+        <p>Description.</p>
+    </figcaption>
+</figure>
+
+<figure class="star">
+    <img src="http://lorempixel.com/192/96/sports/4" alt="Portfolio Item">
+    <figcaption>
+        <h3>Title</h3>
+        <p>Description.</p>
+    </figcaption>
+</figure>
+
+</div>
+
+<br><br><br><br>
+<hr class="dotted">
+<br><br><br><br>
+<div class="bigstar">
+<div class="sectiontitle">Projects</div>
+<p>The following is where the projects will go.</p>
+</div>
+  
+  
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+<script>
+    function showImages(el) {
+        var windowHeight = jQuery( window ).height();
+        $(el).each(function(){
+            var thisPos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (topOfWindow + windowHeight - 200 > thisPos ) {
+                $(this).addClass("fadeIn");
+            }
+        });
+    }
+
+    // if the image in the window of browser when the page is loaded, show that image
+    $(document).ready(function(){
+            showImages('.star');
+    });
+
+    // if the image in the window of browser when scrolling the page, show that image
+    $(window).scroll(function() {
+            showImages('.star');
+    });
+</script>
+    
+<!--Mouse script-->
+<script>
+  
+document.addEventListener('mousemove', function(e) {
+
+  let newTransformRule = 'translate(' + (e.clientX - 15) + 'px, ' + (e.clientY - 15) + 'px)';
+
+  document.querySelector('#arrowCanvas').style.transform = newTransformRule;
+	document.getElementById("arrowCanvas").style.zIndex = "10";
+});
+  
+</script>
+<!--End mouse script-->
+    
+  </body>
+</html>

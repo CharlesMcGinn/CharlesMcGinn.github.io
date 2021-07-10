@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel = "stylesheet" type = "text/css" href = "fonts.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "aboutpage.css"/>
+  </head>
+
+<body>
+<!--Mouse body stuff-->
+<div style="z-index:-1;display:none;">
+<svg>
+  <symbol id="arrow" viewBox="0 0 10 10"  top="0" left="0">
+    <g transform="translate(0,-288.53334)">
+      <path style="fill:grey;stroke:#000000;stroke-width:0;stroke-opacity:1;" d="M8 295C5 294 6 296 7 298l-5-7">
+      <animate attributeName="d" values="M 5 292 C 5 291 0 291 3 294 l 0 0 C 7 298 5 293 5 292 L 5 292 Z;M 6 293 C 8 292 4 290 3 292 l 0 0 C 2 294 4 294 6 293 L 6 293 Z;M 6 293 C 9 291 5 289 4 291 l 0 0 C 3 293 3 295 6 293 L 6 293 Z;M 3 293 C 4 294 7 292 5 291 l 0 0 C 3 290 0 290 3 293 L 3 293 Z;M 5 291 C 5 293 5 297 7 293 l 0 0 C 9 289 5 289 5 291 L 5 291 Z;M 5 292 C 5 290 0 291 3 294 l 0 0 C 6 297 5 293 5 292 L 5 292 Z;" dur="5s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </symbol>
+</svg>
+</div>
+
+<svg id="arrowCanvas" width="60" height="60">
+  <use href="#arrow" width="50" height="50"/>
+</svg>
+<!--End mouse body stuff-->    
+
+<header>
+	<nav>
+    <div>
+  	<a class="nav-pages" href="index.html">Charles McGinn</a>
+    </div>
+    <div>
+    <a class="nav-pages" href="test1.html">Portfolio</a>
+    <a class="nav-pages" href="about.html">About</a>
+    <a class="nav-pages" href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+<canvas id="background-canvas"></canvas>
+
+<div class="about-paragraph">
+    <p>Born and raised in Massachusetts, </p>
+</div>
+    
+<script>
+    window.onload = function() {
+	
+	//Create canvas and initialize its context
+	var canvas = document.getElementById("background-canvas");
+	var ctx = canvas.getContext("2d");
+	
+	//Set the dimensions of canvas equal to the window's dimensions
+	var W = window.innerWidth;
+    var H = window.innerHeight;
+	canvas.width = W;
+	canvas.height = H;
+	
+	//Create an array of blobs
+	var blobs = [];
+	for(var i = 0; i < 20; i++ ){
+		blobs.push(new create_blob());
+	}
+	
+	//Function to create circles with different positions and velocities
+	function create_blob() {
+		//Random Position
+		this.x1 = Math.random()*W;
+		this.y1 = Math.random()*H;
+		
+		//Random Velocities
+		this.vx = 0.4+Math.random()*1.1;
+		this.vy = -this.vx;
+        
+        //Random Scale
+        this.sc = Math.random() * (4-1) + 1;
+        
+        //Positive or negative 1
+        this.bin = Math.round(Math.random()) * 2 - 1;
+		
+		//Random Radii
+        this.x1_1 = Math.random() * (30*this.sc) + 10*this.sc;
+        this.y1_1 = Math.random() * (30*this.sc) + 10*this.sc;
+        this.x2 = this.x1 + 40*this.sc;
+        this.y2 = this.y1 + 30*this.sc;
+        this.x2_1 = Math.random() * (30*this.sc) + 10*this.sc;
+        this.y2_1 = Math.random() * (30*this.sc) + 10*this.sc;
+        this.x3 = this.x1 + 70*this.sc;
+        this.y3 = this.y1 - 20*this.sc;
+        this.x3_1 = Math.random() * (30*this.sc) + 10*this.sc;
+        this.y3_1 = Math.random() * (30*this.sc) + 10*this.sc;
+	}
+	
+	//Function to draw the background
+	function draw() {
+		//Create the gradient
+		var grad = ctx.createLinearGradient(0, 0, W, H);
+		grad.addColorStop(0, 'rgb(95,145,94)');
+		grad.addColorStop(1, 'rgb(0, 0, 0)');
+		
+		//Fill the canvas with the gradient
+		ctx.globalCompositeOperation = "source-over";
+		ctx.fillStyle = grad;
+		ctx.fillRect(0,0,W,H);
+        
+        
+
+		//Fill the canvas with the circles
+		for(var j = 0; j < blobs.length; j++) {
+			var c = blobs[j];
+			
+			//Draw the circle and it with the blur grad
+			ctx.beginPath();
+			ctx.globalCompositeOperation = "overlay";
+			ctx.fillStyle = grad;
+            ctx.moveTo(c.x1,c.y1);
+            ctx.bezierCurveTo((c.x1 - c.x1_1), (c.y1 + c.y1_1), (c.x2 - c.x2_1), (c.y2 + c.y2_1), (c.x2), (c.y2));
+            ctx.bezierCurveTo((c.x2 + c.x2_1), (c.y2 - c.y2_1), (c.x3 + c.x3_1), (c.y3 + c.y3_1), (c.x3), (c.y3));
+            ctx.bezierCurveTo((c.x3 - c.x3_1), (c.y3 - c.y3_1), (c.x1 + c.x1_1), (c.y1 - c.y1_1), (c.x1), (c.y1));
+			ctx.fill();
+			
+			//Lets use the velocity now
+            c.x1 += (c.bin * c.vx);
+			c.y1 += c.vy;
+            c.x2 += (c.bin * c.vx);
+			c.y2 += c.vy;
+            c.x3 += (c.bin * c.vx);
+			c.y3 += c.vy;
+			
+			//To prevent the circles from moving out of the canvas
+			if(c.x1 < -50 && c.x2 < -50 && c.x3 < -50) {c.x1 = W+50; c.x2 = W+50+40*c.sc; c.x3 = W+50+70*c.sc;}
+			if(c.y1 < -50 && c.y2 < -50 && c.y3 < -50) {c.y1 = H+50; c.y2 = H+50+30*c.sc; c.y3 = H+50-20*c.sc;}
+			if(c.x1 > W+50 && c.x2 > W+50 && c.x3 > W+50) {c.x1 = -50; c.x2 = -50+40*c.sc; c.x3 = -50+70*c.sc;}
+			if(c.y1 > H+50 && c.y2 > H+50 && c.y3 > H+50) {c.y1 = -50; c.y2 = -50+30*c.sc; c.y3 = -50-20*c.sc;}
+		}
+	}
+	
+	setInterval(draw, 25);
+
+}
+</script>
+    
+<!--Mouse script-->
+<script>
+  
+document.addEventListener('mousemove', function(e) {
+
+  let newTransformRule = 'translate(' + (e.clientX - 15) + 'px, ' + (e.clientY - 15) + 'px)';
+
+  document.querySelector('#arrowCanvas').style.transform = newTransformRule;
+	document.getElementById("arrowCanvas").style.zIndex = "100";
+});
+  
+</script>
+<!--End mouse script-->
+    
+  </body>
+</html>

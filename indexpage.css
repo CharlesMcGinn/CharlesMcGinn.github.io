@@ -1,0 +1,142 @@
+body {
+    padding: 0 5px 0 20px;
+    background: rgb(95,145,94);
+background: linear-gradient(0deg, rgba(95,145,94,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+
+h1 {
+    
+}
+
+p {
+    font-size: 15pt;
+    margin: 0;
+    padding-left: 3px;
+}
+
+a:hover {
+  color: white;
+}
+
+section {
+  margin: 80px 0 80px 0;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:  32px 32px;
+}
+
+section h1 {
+  grid-column: 2 / span 10;
+  text-align: center;
+}
+
+.bottom-section {
+    width: 100%;
+    
+}
+      
+.star {
+        visibility: hidden;
+    }
+
+.fadeIn {
+        -webkit-animation: animat_show 0.8s;
+        animation: animat_show 0.8s;
+        visibility: visible !important;
+    }
+
+    @-webkit-keyframes animat_show{
+        0%{opacity:0}
+        30%{opacity:0}
+        100%{opacity:1}
+    }
+
+/*Fading on scroll*/
+  .slidingtext {
+ overflow: hidden;
+ position: relative;
+ /* Apply animation to this element */	
+ animation: slidingtext 2s ease-out;
+}
+/* Move it (define the animation) */
+@keyframes slidingtext {
+ 0%   {transform: translateX(-200%);
+  		opacity: 0%;}
+ 75% {transform: translateX(-50%); 
+  		opacity: 0%;}
+ 100% {transform: translateX(0%); 
+  		opacity: 100%;}
+}
+
+  .half-fade {
+    opacity: 30%;
+    animation: half-fade-in 2s ease-out;
+  }
+  @keyframes half-fade-in {
+ 0%   {opacity: 0%;}
+ 100% {opacity: 30%;}
+}
+  
+    .star {
+        visibility: hidden;
+    }
+
+    .fadeIn {
+        -webkit-animation: animat_show 1.5s;
+        animation: animat_show 1.5s;
+        visibility: visible !important;
+    }
+
+    @-webkit-keyframes animat_show{
+        0%{opacity:0}
+        100%{opacity:1}
+    }
+/*End fading on scroll*/
+
+section {
+}
+
+.big-box {
+    width: 100%;
+    border: 1px solid transparent;
+}
+
+.section {
+    position: sticky;
+    top: 30%;
+    border: 1px solid transparent;
+    overflow: hidden;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.section-text {
+    margin: 0 0 0 30px;
+    width: 40%;
+    float: left;
+}
+/*end page CSS*/
+
+/*drawing CSS*/
+.mySVG {
+    /*position: sticky;
+    top: 15%;
+    right: 5%;*/
+    width: 400px;
+    height: 350px;
+}
+
+.svgGroup {
+    top: 0;
+    margin: 0;
+}
+
+.svg-container {
+    margin: 0;
+    width: 40%;
+    float: right;
+}
+/*end drawing CSS*/

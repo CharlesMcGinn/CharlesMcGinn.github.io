@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel = "stylesheet" type = "text/css" href = "fonts.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "indexpage.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "https://CharlesMcGinn.github.io/fonts.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "https://CharlesMcGinn.github.io/style.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "https://CharlesMcGinn.github.io/indexpage.css"/>
   </head>
 <body>
 <!--Mouse body stuff-->
@@ -97,9 +97,9 @@
 <div class="big-box">
     <div class="section">
         <div class="section-text star" style="width:80%;">
-            <h1 style="margin: 0;"><a style="padding-left:10px" href="test1.html">My Portfolio</a><span class="half-fade"> in the making</span></h1>
-            <h1 style="margin: 0;"><a style="padding-left:10px" href="about.html">About me</a><span class="half-fade"> and what I do</span></h1>
-            <h1 style="margin: 0;"><a style="padding-left:10px" href="contact.html">Contact me</a><span class="half-fade"> to get in touch</span></h1>
+            <h1 style="margin: 0;"><a style="padding-left:10px" href="https://CharlesMcGinn.github.io/test1.html">My Portfolio</a><span class="half-fade"> in the making</span></h1>
+            <h1 style="margin: 0;"><a style="padding-left:10px" href="https://CharlesMcGinn.github.io/about.html">About me</a><span class="half-fade"> and what I do</span></h1>
+            <h1 style="margin: 0;"><a style="padding-left:10px" href="https://CharlesMcGinn.github.io/contact.html">Contact me</a><span class="half-fade"> to get in touch</span></h1>
         </div>
         <div class="svg-container">
             <svg class="mySVG">

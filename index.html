@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel = "stylesheet" type = "text/css" href = "fonts.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
-    <link rel = "stylesheet" type = "text/css" href = "indexpage.css"/>
-  </head>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel = "stylesheet" type = "text/css" href = "fonts.css"/>
+      <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+      <link rel = "stylesheet" type = "text/css" href = "indexpage.css"/>
+    </head>
 <body>
 <!--Mouse body stuff-->
 <svg>
-  <symbol id="arrow" viewBox="0 0 10 10"  top="0" left="0">
-    <g transform="translate(0,-288.53334)">
-      <path id="arrowpath" style="fill:none;stroke:#000000;stroke-width:0;stroke-opacity:1;" d="M 5 292 C 5 291 0 291 3 294 l 0 0 C 7 298 5 293 5 292 L 5 292 Z">
-      <animate attributeName="d" values="M 5 292 C 5 291 0 291 3 294 l 0 0 C 7 298 5 293 5 292 L 5 292 Z;M 6 293 C 8 292 4 290 3 292 l 0 0 C 2 294 4 294 6 293 L 6 293 Z;M 6 293 C 9 291 5 289 4 291 l 0 0 C 3 293 3 295 6 293 L 6 293 Z;M 3 293 C 4 294 7 292 5 291 l 0 0 C 3 290 0 290 3 293 L 3 293 Z;M 5 291 C 5 293 5 297 7 293 l 0 0 C 9 289 5 289 5 291 L 5 291 Z;M 5 292 C 5 290 0 291 3 294 l 0 0 C 6 297 5 293 5 292 L 5 292 Z;" dur="5s" repeatCount="indefinite" />
-      </path>
-    </g>
-  </symbol>
+    <symbol id="arrow" viewBox="0 0 10 10"  top="0" left="0">
+        <g transform="translate(0,-288.53334)">
+            <path id="arrowpath" style="fill:none;stroke:#000000;stroke-width:0;stroke-opacity:1;" d="M 5 292 C 5 291 0 291 3 294 l 0 0 C 7 298 5 293 5 292 L 5 292 Z">
+            <animate attributeName="d" values="M 5 292 C 5 291 0 291 3 294 l 0 0 C 7 298 5 293 5 292 L 5 292 Z;M 6 293 C 8 292 4 290 3 292 l 0 0 C 2 294 4 294 6 293 L 6 293 Z;M 6 293 C 9 291 5 289 4 291 l 0 0 C 3 293 3 295 6 293 L 6 293 Z;M 3 293 C 4 294 7 292 5 291 l 0 0 C 3 290 0 290 3 293 L 3 293 Z;M 5 291 C 5 293 5 297 7 293 l 0 0 C 9 289 5 289 5 291 L 5 291 Z;M 5 292 C 5 290 0 291 3 294 l 0 0 C 6 297 5 293 5 292 L 5 292 Z;" dur="5s" repeatCount="indefinite" />
+            </path>
+        </g>
+    </symbol>
 </svg>
 
 <svg id="arrowCanvas" width="60" height="60">
-  <use href="#arrow" width="50" height="50"/>
+    <use href="#arrow" width="50" height="50"/>
 </svg>
 <!--End mouse body stuff-->
 
@@ -119,118 +120,118 @@
 
     // Find scroll percentage on scroll (using cross-browser properties), and offset dash same amount as percentage scrolled
     window.addEventListener("scroll", myFunction)
+        function myFunction() {
+            requestAnimationFrame(function(){
+if (window.innerWidth > 992) {
+                // Get the big box containing the SVG section ... use ID for one, Class for multiple
+                // Var containingBox = document.getElementById("big-box"); <- Commented out original by ID for just one SVG
+                var containingBox = document.getElementsByClassName("big-box");
 
-    function myFunction() {
-        requestAnimationFrame(function(){
+                // Create a for-loop to go through all instances of the class
+                for (var i = 0; i < containingBox.length; i++) {
 
-            // Get the big box containing the SVG section ... use ID for one, Class for multiple
-            // Var containingBox = document.getElementById("big-box"); <- Commented out original by ID for just one SVG
-            var containingBox = document.getElementsByClassName("big-box");
-            
-            // Create a for-loop to go through all instances of the class
-            for (var i = 0; i < containingBox.length; i++) {
-                
-                // Get drawing name
-                var drawingName = "draw-" + i;
-                //console.log("Drawing's name is " + drawingName);
-                
-                // Get the class of that SVG's <path> elements
-                var drawing = document.getElementsByClassName(drawingName);
-                
-                // Get longest path by setting maximum as the first path and checking the rest
-                var maxPath = drawing[0].getTotalLength();
-                for (var iii = 0; iii < (drawing.length -1); iii++) {
-                    if (drawing[iii].getTotalLength() < drawing[iii + 1].getTotalLength()) {
-                        maxPath = drawing[ii + 1].getTotalLength();
+                    // Get drawing name
+                    var drawingName = "draw-" + i;
+                    //console.log("Drawing's name is " + drawingName);
+
+                    // Get the class of that SVG's <path> elements
+                    var drawing = document.getElementsByClassName(drawingName);
+
+                    // Get longest path by setting maximum as the first path and checking the rest
+                    var maxPath = drawing[0].getTotalLength();
+                    for (var iii = 0; iii < (drawing.length -1); iii++) {
+                        if (drawing[iii].getTotalLength() < drawing[iii + 1].getTotalLength()) {
+                            maxPath = drawing[ii + 1].getTotalLength();
+                        }
                     }
-                }
-                //console.log(maxPath);
-                
-                // Make SVG and SVGcontainer same size as <g> size
-                var svgcont = document.getElementsByClassName("svg-container");
-                var actualsvg = document.getElementsByClassName("mySVG");
-                // Get the height of the group of paths that make the SVG
-                var svggroup = document.getElementsByClassName("SVGgroup");
-                var svgheight = svggroup[i].getBoundingClientRect().height;
-                // Add 10px to the height of the group so the container doesn't cut anything off
-                actualsvg[i].style.height = (+svgheight +20) + "px";
-                svgcont[i].style.height = (+svgheight +20) + "px";
-                // Check the height of the container if you want to
-                var svgcontheight = svgcont[i].getBoundingClientRect().height;
-                //console.log(i + " " + svgcontheight);
-                
-                // Go through each <path> of the SVG ... executes once if one path
-                for (var ii = 0; ii < drawing.length; ii++) {
-                    
-                    // Get length of <path>
-                    var length = drawing[ii].getTotalLength();
+                    //console.log(maxPath);
 
-                    // The start position of the drawing
-                    drawing[ii].style.strokeDasharray = length;
-                    //console.log("Length is " + length);
+                    // Make SVG and SVGcontainer same size as <g> size
+                    var svgcont = document.getElementsByClassName("svg-container");
+                    var actualsvg = document.getElementsByClassName("mySVG");
+                    // Get the height of the group of paths that make the SVG
+                    var svggroup = document.getElementsByClassName("SVGgroup");
+                    var svgheight = svggroup[i].getBoundingClientRect().height;
+                    // Add 10px to the height of the group so the container doesn't cut anything off
+                    actualsvg[i].style.height = (+svgheight +20) + "px";
+                    svgcont[i].style.height = (+svgheight +20) + "px";
+                    // Check the height of the container if you want to
+                    var svgcontheight = svgcont[i].getBoundingClientRect().height;
+                    //console.log(i + " " + svgcontheight);
 
-                    // Hide the drawing by offsetting dash
-                    drawing[ii].style.strokeDashoffset = length;
-                
-                    // Set the height of the big box <div> to the length of longest <path>
-                    containingBox[i].style.height = (+maxPath +1000) + "px";
-                
-                    // Get height of container that the SVG will be scrolled through
-                    var containingBoxRect = containingBox[i].getBoundingClientRect();
-                    var svgDivHeight = containingBoxRect.height;
-                    //console.log("Box " + i + " is: " + svgDivHeight);
-                
-                    // Get top position of SVG container using relative to window + scroll position
-                    var containingBoxTop = containingBoxRect.top + window.scrollY;
-                    //console.log("Position of SVG box " + i + " top: " + containingBoxTop);
-                
-                    // Get the scrolling position at a third of the distance from the top of the window
-                    // var windowScroll = $(window).scrollTop(); <- Commented out original for whole window
-                    var windowScroll = window.scrollY + window.innerHeight/3;
-                    //console.log("Position of scroll: " + windowScroll);
-                
-                    // Gets the position for the start of the div to see if the scroll bar has reached the boxed section
-                    var scrollPositionCheck = windowScroll - containingBoxTop;
-                    //console.log("Position scroll rel to box " + i + " top: " + scrollPositionCheck);
-                    
-                    // Check if the scroll bar hasn't reached the container yet; if not don't draw
-                    if (scrollPositionCheck < 0) {
-                        drawing[ii].style.strokeDashoffset = +drawing[ii].style.strokeDasharray + .5;
-                        //console.log("not yet");
-                    }
-                
-                    // If the scroll bar has reached the container, start drawing
-                    if (scrollPositionCheck > 0) {
-    
-                        // Reset dasharray
+                    // Go through each <path> of the SVG ... executes once if one path
+                    for (var ii = 0; ii < drawing.length; ii++) {
+
+                        // Get length of <path>
+                        var length = drawing[ii].getTotalLength();
+
+                        // The start position of the drawing
                         drawing[ii].style.strokeDasharray = length;
-                    
-                        // Multiply by a decimal so to control the speed of the drawing
-                        var scrollPercent = scrollPositionCheck / svgDivHeight *1.1;
-                        //console.log("now " + scrollPercent);
-    
-                        if (scrollPercent <= 1) {
+                        //console.log("Length is " + length);
 
-                            // Draw the length of SVG path according to the scroll position within div
-                            var draw = length * scrollPercent;
-                            // Reverse the drawing (when scrolling upwards)
-                            drawing[ii].style.strokeDashoffset = length - draw;
+                        // Hide the drawing by offsetting dash
+                        drawing[ii].style.strokeDashoffset = length;
 
-                        } else {
-    	                   var still = length;
-                            }
+                        // Set the height of the big box <div> to the length of longest <path>
+                        containingBox[i].style.height = (+maxPath +1000) + "px";
+
+                        // Get height of container that the SVG will be scrolled through
+                        var containingBoxRect = containingBox[i].getBoundingClientRect();
+                        var svgDivHeight = containingBoxRect.height;
+                        //console.log("Box " + i + " is: " + svgDivHeight);
+
+                        // Get top position of SVG container using relative to window + scroll position
+                        var containingBoxTop = containingBoxRect.top + window.scrollY;
+                        //console.log("Position of SVG box " + i + " top: " + containingBoxTop);
+
+                        // Get the scrolling position at a third of the distance from the top of the window
+                        // var windowScroll = $(window).scrollTop(); <- Commented out original for whole window
+                        var windowScroll = window.scrollY + window.innerHeight/3;
+                        //console.log("Position of scroll: " + windowScroll);
+
+                        // Gets the position for the start of the div to see if the scroll bar has reached the boxed section
+                        var scrollPositionCheck = windowScroll - containingBoxTop;
+                        //console.log("Position scroll rel to box " + i + " top: " + scrollPositionCheck);
+
+                        // Check if the scroll bar hasn't reached the container yet; if not don't draw
+                        if (scrollPositionCheck < 0) {
+                            drawing[ii].style.strokeDashoffset = +drawing[ii].style.strokeDasharray + .5;
+                            //console.log("not yet");
+                        }
+
+                        // If the scroll bar has reached the container, start drawing
+                        if (scrollPositionCheck > 0) {
+
+                            // Reset dasharray
+                            drawing[ii].style.strokeDasharray = length;
+
+                            // Multiply by a decimal so to control the speed of the drawing
+                            var scrollPercent = scrollPositionCheck / svgDivHeight *1.1;
+                            //console.log("now " + scrollPercent);
+
+                            if (scrollPercent <= 1) {
+
+                                // Draw the length of SVG path according to the scroll position within div
+                                var draw = length * scrollPercent;
+                                // Reverse the drawing (when scrolling upwards)
+                                drawing[ii].style.strokeDashoffset = length - draw;
+
+                            } else {
+                               var still = length;
+                                }
+                        }
+
+                        // If the scroll bar is definitely at the end of the container, drawing is complete
+                        if (scrollPositionCheck / svgDivHeight *1.1 > 1) {
+                            drawing[ii].style.strokeDashoffset = 0;
+                            //console.log("over")
+                        }
                     }
-                
-                    // If the scroll bar is definitely at the end of the container, drawing is complete
-                    if (scrollPositionCheck / svgDivHeight *1.1 > 1) {
-                        drawing[ii].style.strokeDashoffset = 0;
-                        //console.log("over")
-                    }
-                }
-                
-             }
-        });
-    }
+
+                 }
+}
+            });
+        }
 }// End drawing script
 </script>
   
@@ -242,7 +243,7 @@ document.addEventListener("mouseenter", function(e){
     if (e.clientY > 0 || e.clientX > 0 || (e.clientX < window.innerWidth || e.clientY < window.innerHeight))
     {
         document.getElementById("arrowpath").style.fill = "none";
-        document.getElementById("arrowpath").style.strokeWidth = "0.1px";
+        document.getElementById("arrowpath").style.strokeWidth = "0.2px";
         document.getElementById("arrowpath").style.strokeDasharray = "1";
         let newTransformRule = 'translate(' + (e.clientX - 15) + 'px, ' + (e.clientY - 15) + 'px)';
         document.querySelector('#arrowCanvas').style.transform = newTransformRule;
@@ -263,7 +264,7 @@ document.addEventListener('mousemove', function(e) {
     if (e.clientY + window.scrollY < 11500) {
         document.getElementById("arrowpath").style.fill = "none";
         document.getElementById("arrowpath").style.stroke = "black";
-        document.getElementById("arrowpath").style.strokeWidth = "0.1px";
+        document.getElementById("arrowpath").style.strokeWidth = "0.2px";
         document.getElementById("arrowpath").style.strokeDasharray = "1";
         let newTransformRule = 'translate(' + (e.clientX - 15) + 'px, ' + (e.clientY - 15) + 'px)';
         document.querySelector('#arrowCanvas').style.transform = newTransformRule;

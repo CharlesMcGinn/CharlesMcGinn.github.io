@@ -139,4 +139,12 @@ section {
     width: 40%;
     float: right;
 }
+
+@media (max-width: 992px)  {
+
+   .svg-container {
+       display: none;
+   }
+
+}
 /*end drawing CSS*/

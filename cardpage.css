@@ -1,0 +1,53 @@
+.cardbackground {
+    background-color: black;
+    position: relative;
+    display: block;
+    min-height: 80vh;
+    overflow: hidden;
+  	width: 100%;
+    overflow: auto;
+}
+
+img {
+    background-color: black;
+    float: right;
+    padding: 5px 50px 20px 30px;
+    /* display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    right: 30px;
+    top: 30px; */
+    width: 600px;
+  	max-width: 50vw;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.titletext {
+    font-size: 40px;
+    color: white;
+    font-family: Raleway;
+    font-weight: bold;
+    margin: 20px 0 0 50px;
+}
+
+.descbox {
+    float: left;
+    width: calc(100vw - 500px - 80px);
+    min-width: 35vw;
+    margin: 0;
+    margin: 5px 0 0 30px;
+}
+
+.desctext {
+    font-size: 20px;
+    color: white;
+    margin: 5px 70px 30px 70px;
+}
+
+h2 {
+    font-size: 35px;
+    color: white;
+    margin: 20px 0 10px 30px;
+}

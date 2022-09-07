@@ -1,0 +1,220 @@
+.star {
+    visibility: hidden;
+    display: inline-block;
+    }
+
+.bigstar {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.fadeIn {
+    -webkit-animation: animat_show 1.5s;
+    animation: animat_show 1.5s;
+    visibility: visible !important;
+    }
+
+@-webkit-keyframes animat_show {
+    0%{opacity:0}
+    100%{opacity:1}
+    }
+
+figure {
+    display:inline-block;
+    height: 350px;
+    margin: 5%;
+    width: 500px;
+/*    -webkit-transform: perspective(250); 
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: .5s; */
+}
+
+figure:hover {
+/*    -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(5em); */
+}
+
+
+.sectiontitle {
+    font-weight: bold;
+    text-align: center;
+    font-size: 32pt;
+    display: block;
+    margin: 0 0 40px 0;
+}
+
+.iconlegend {
+    background-color: none;
+    position: relative;
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 40px 40px 40px 40px;
+    height: 50px;
+    width: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-style: dashed;
+    border-color: black;
+    margin: 0 10px 0 0;
+}
+
+.legenditem {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    font-weight: bold;
+    height: 50px;
+}
+
+.imgcontainer {
+    background-color: grey;
+    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+    display: block;
+    height: 350px;
+  	width: 500px;
+    border-radius: 40px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.imgcontainer:hover {
+    transform: scale(1.05) rotateY(15deg);
+    background-color: rgb(95,145,94);
+}
+
+img {
+    background-color: #222;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    border-radius: 0 40px 0 0;
+    height: 275px;
+  	width: 425px;
+    object-fit: cover;
+  /*	clip: rect(0px,60px,200px,0px);
+    -webkit-transition: .5s; */
+}
+
+.iconholder {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    float: left;
+    border-radius: 40px 0 0 0;
+    height: 275px;
+    width: 75px;
+}
+
+.uiux {
+    display: block;
+    margin: 0;
+    height: 75px;
+    width: 60px;
+    float: right;
+}
+
+.upath {
+    fill: white;
+}
+
+.xpath {
+    fill: white;
+}
+
+.ipath {
+    fill: white;
+}
+
+.wrench {
+    display: block;
+    margin: 0;
+    height: 75px;
+    width: 60px;
+    float: right;
+}
+
+.wrenchpath {
+    fill: white;
+}
+
+.arrowholder {
+    background-color: none;
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    vertical-align: bottom;
+    float: left;
+    border-radius: 0 0 0 40px;
+    height: 75px;
+    width: 75px;
+    overflow: hidden;
+}
+
+.arrowholder:hover {
+}
+
+.downarrow {
+    display: inline-block;
+    margin: auto;
+    height: 75px;
+    width: 75px;
+    float: right;
+}
+
+.arrowpath {
+    fill: black;
+}
+
+.textholder {
+    background-color: black;
+    display: inline-block;
+    vertical-align: bottom;
+    float: left;
+    border-radius: 0 0 40px 0;
+    height: 75px;
+    width: 425px;
+}
+
+.cardcaptiontitle {
+    color: white;
+    font-family: Raleway;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0 0 15px;
+}
+
+.cardcaptiontext {
+    color: white;
+    margin: 0 0 0 15px;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    text-align: left;
+    padding: 1.5em;
+  	height: 150px;
+    -webkit-transform: rotateX(-90deg);
+    -webkit-transform-origin: 100% 0;
+    -webkit-transition: .5s;
+}
+
+figure:hover figcaption {
+    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+}
+
+h3 {
+    font-weight: bold;
+}
+
+p {
+    text-align: left;
+}

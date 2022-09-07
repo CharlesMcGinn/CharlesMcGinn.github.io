@@ -1,5 +1,5 @@
 body {
-    padding: 0 5px 0 20px;
+    padding: auto;
     background: rgb(95,145,94);
 background: linear-gradient(0deg, rgba(95,145,94,1) 0%, rgba(255,255,255,1) 100%);
 }
@@ -56,21 +56,60 @@ section h1 {
 /*Fading on scroll*/
   .slidingtext {
  overflow: hidden;
- position: relative;
- /* Apply animation to this element */	
- animation: slidingtext 2s ease-out;
+ position: relative;	
+ animation: slidingtext 5s ease-out;
 }
 /* Move it (define the animation) */
 @keyframes slidingtext {
- 0%   {transform: translateX(-200%);
+ 0%   {transform: translate(-200%,300%);
+  		opacity: 0%;
+        font-size: 50px;}
+ 25% {transform: translate(-50%,300%);
   		opacity: 0%;}
- 75% {transform: translateX(-50%); 
-  		opacity: 0%;}
- 100% {transform: translateX(0%); 
+ 30% {transform: translateX(0%,300%); 
+  		opacity: 50%;}
+    50% { transform: translateY(300%);
   		opacity: 100%;}
+    75% {transform: translateY(300%); 
+  		}
+    100% {transform: translateY(0%); 
+        font-size: 40px;
+  		}
+}
+
+nav {
+    animation: shadowFade 5.5s ease-out;
+}
+
+@keyframes shadowFade {
+    0% {box-shadow: none;}
+    90% {box-shadow: none;}
+    100% {box-shadow: 0 1px 10px;}
+}
+
+@keyframes navSlide {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-65%);}
+}
+
+.nav-pages {
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn2 5.5s ease-out;
+}
+
+a.nav-pages:hover {
+  color: rgb(95,145,94);
+}
+
+@keyframes fadeIn2 {
+    0% {opacity: 0%;}
+    90% {opacity: 0%;}
+    100% {opacity: 100%;}
 }
 
   .half-fade {
+      color: white;
     opacity: 30%;
     animation: half-fade-in 2s ease-out;
   }
@@ -100,7 +139,6 @@ section {
 
 .big-box {
     width: 100%;
-    border: 1px solid transparent;
 }
 
 .section {

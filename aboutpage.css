@@ -1,13 +1,11 @@
 body {
     background-color: rgb(95,145,94);
-    display: flex;
     justify-content: center;
 }
 
 header {
     background-color: rgb(255, 255, 255, 0.75);
-    position: sticky;
-    top: 0;
+    overflow: auto;
 }
 
 p {
@@ -16,12 +14,55 @@ p {
     font-size: 16pt;
 }
 
+.cardbackground {
+    background-color: black;
+    position: relative;
+    display: block;
+    min-height: 80vh;
+    overflow: hidden;
+  	width: 100%;
+    overflow: auto;
+}
+
+img {
+    float: right;
+    padding: 5px 50px 20px 30px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    width: 300px;
+}
+
+.titletext {
+    font-size: 40px;
+    color: white;
+    font-family: Raleway;
+    font-weight: bold;
+    margin: 20px 0 0 50px;
+}
+
+.descbox {
+    float: left;
+    width: calc(50vw - 20px);
+    min-width: 35vw;
+    margin: 0;
+    margin: 5px 0 0 30px;
+}
+
+.desctext {
+    font-size: 20px;
+    color: white;
+    margin: 5px 70px 30px 70px;
+}
+
 .about-paragraph {
-    position: absolute;
-    top: 90px;
+    position: relative;
+    display: block;
+    overflow: hidden;
     background-color: rgb(255, 255, 255, 0.75);
     height: 80vh;
     width: 97vw;
+    margin: 0 1.5vw 0 1.5vw;
 }
 
 #background-canvas {

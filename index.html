@@ -2,6 +2,7 @@
 <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="UTF-8">
       <link rel = "stylesheet" type = "text/css" href = "fonts.css"/>
       <link rel = "stylesheet" type = "text/css" href = "style.css"/>
       <link rel = "stylesheet" type = "text/css" href = "indexpage.css"/>
@@ -42,7 +43,20 @@
     
 <!--<br><br><br><br><br><br>-->
 
+<div class="downanimator">
+    <svg class="fallingarrow">
+        <g>
+        <path style="fill: black;" d="M 32 44 L 24 36 C 23 35 24 33 26 35 L 31 40 L 31 25 C 31 24 33 24 33 25 L 33 40 L 38 35 C 40 33 41 35 40 36 L 32 44 Z"></path>
+        </g>
+    </svg>
+</div>
     
+<div class="mynameis">
+        <p><span>&#x1F44B</span> Hi, I'm</p>
+</div>
+<div class="imallabout">
+        <p>and I'm all about...</p>
+</div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     
@@ -50,15 +64,26 @@
     <div class="section">
         <div class="section-text star">
             <h1 style="margin:0">Seeing</h1>
-            <p>what is yet to be uncovered</p>
+            <p>from every angle and perspective</p>
         </div>
         <div class="svg-container">
-            <svg class="mySVG">
-                <g class="SVGgroup">
-                    <path fill="none" stroke="black" stroke-width="2" stroke-linecap="round" class="draw-0" d="M 151 141.5 C 98.5 141.5 58 94.5001 11.5 71 C 58 54.0001 88 5 151 5 C 208 5 249 54.9999 298 72.5 C 249 95.4999 199 141.5 151 141.5 A 1.5 1.5 90 0 0 151 5 A 1.5 1.5 90 0 0 151 141.5 C 152.5 128 140.5 120.5 142 105.5 C 128.5 107 130 131 116.5 132.5 C 128.5 120.5 113.5 105.5 127 98 C 113.5 92 112 113 92.5 108.5 C 110.5 102.5 101.5 83 119 83 C 104 72 95.5 86 83.5 72.5 C 103 78.5 103 59 118 65 C 115 50 94 53 92.5 38 C 104.5 54.5 118 36.5 127 50 C 130 35 112 35 115 15.5 C 118 33.5 137.5 24.5 142 41 C 154 27.5 139 17 151 5 L 161.5 41 L 187 15.5 L 175 50 L 208 36.5 L 184 65 L 218.5 71 L 184 80 L 211 105.5 L 175 96.5 L 187 131 L 161.5 105.5 L 151 141.5 C 152.5 128 140.5 120.5 142 105.5 A 1.5 1.5 90 0 0 160 41 A 1.5 1.5 90 0 0 142 105.5 C 146.5 107 151 107 151 105.5 C 151 84 151 62.5 151 41 C 150 54 146 66 135 64 C 127 62 128 51 138 52 C 147 54 149 74 135 78 C 129 79 124 76 125 72 C 127 64 144 69 145 78 C 145 83 144 93 134 92 C 124 89 135 76 145 86 C 147 89 150 97 151 105 L 167 95 L 174 86 L 158 86 L 176 77 L 176 67 L 158 74 L 174 59 L 170 53 L 158 59 L 164 48 L 151 41" />
+            <svg class="mySVG" height="100%" style="right:200px">
+                <defs>
+                    <filter id="f1" x="0px" y="0px" width="200%" height="200%" filterUnits="userSpaceOnUse">
+                      <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
+                      <feColorMatrix result = "matrixOut" in = "offOut" type = "matrix" values = "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+                      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="5" />
+                      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                    </filter>
+                </defs> 
+                <g class="SVGgroup" filter="url(#f1)">
+                    <path fill="none" stroke="black" stroke-width="2" stroke-linecap="round" class="draw-0" d="M 151 151.5 C 98.5 151.5 58 104.5001 11.5 81 C 58 64.0001 88 15 151 15 C 208 15 249 64.9999 298 82.5 C 249 105.4999 199 151.5 151 151.5 A 1.5 1.5 90 0 0 151 15 A 1.5 1.5 90 0 0 151 151.5 C 152.5 138 140.5 130.5 142 115.5 C 128.5 117 130 141 116.5 142.5 C 128.5 130.5 113.5 115.5 127 108 C 113.5 102 112 123 92.5 118.5 C 110.5 112.5 101.5 93 119 93 C 104 82 95.5 96 83.5 82.5 C 103 88.5 103 69 118 75 C 115 60 94 63 92.5 48 C 104.5 64.5 118 46.5 127 60 C 130 45 112 45 115 25.5 C 118 43.5 137.5 34.5 142 51 C 154 37.5 139 27 151 15 L 161.5 51 L 187 25.5 L 175 60 L 208 46.5 L 184 75 L 218.5 81 L 184 90 L 211 115.5 L 175 106.5 L 187 141 L 161.5 115.5 L 151 151.5 C 152.5 138 140.5 130.5 142 115.5 A 1.5 1.5 90 0 0 160 51 A 1.5 1.5 90 0 0 142 115.5 C 146.5 117 151 117 151 115.5 C 151 94 151 72.5 151 51 C 150 64 146 76 135 74 C 127 72 128 61 138 62 C 147 64 149 84 135 88 C 129 89 124 86 125 82 C 127 74 144 79 145 88 C 145 93 144 103 134 102 C 124 99 135 86 145 96 C 147 99 150 107 151 115 L 167 105 L 174 96 L 158 96 L 176 87 L 176 77 L 158 84 L 174 69 L 170 63 L 158 69 L 164 58 L 151 51" />
                 </g>
             </svg>
+            <img class="star" style="width:300px; right: 500px; top: -40px; z-index: -4;" src="images/shell_image.jpg" alt="Portfolio Item">
+            <img class="star" style="width:300px; right: 70px; top: -60px;" src="images/Bell_Study.jpg" alt="Portfolio Item">
         </div>
+        
     </div>
 </div>
     
@@ -68,14 +93,24 @@
     <div class="section">
         <div class="section-text star">
             <h1 style="margin:0">Imagining</h1>
-            <p>the solutions that unite</p>
+            <p>solutions that unite</p>
         </div>
         <div class="svg-container">
-            <svg class="mySVG">
-                <g class="SVGgroup">
+            <svg class="mySVG" height="100%" style="right:200px">
+                <defs>
+                    <filter id="f1" x="0px" y="0px" width="200%" height="200%" filterUnits="userSpaceOnUse">
+                      <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
+                      <feColorMatrix result = "matrixOut" in = "offOut" type = "matrix" values = "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+                      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="5" />
+                      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                    </filter>
+                </defs> 
+                <g class="SVGgroup" filter="url(#f1)">
                     <path fill="none" stroke="black" stroke-width="2" stroke-linecap="round" class="draw-1" d="M 108.25 320.75 L 45.25 320.75 L 45.25 95.75 L 67.75 95.75 L 67.75 66.5 L 54.25 66.5 L 45.25 37.25 L 63.25 37.25 L 65.5 28.25 L 65.5 23.75 L 67.75 21.5 L 70 21.5 L 70 5.75 L 70 21.5 L 72.25 21.5 L 74.5 23.75 L 74.5 28.25 L 76.75 37.25 L 90.25 37.25 L 90.25 111.5 L 97 111.5 L 97 129.5 L 103.75 129.5 L 103.75 14.75 L 108.25 14.75 C 142 14.75 137.5 41.75 137.5 50.75 L 144.25 50.75 L 144.25 149.75 L 124 149.75 L 124 199.25 L 115 185.75 L 115 224 L 128.5 224 L 128.5 237.5 L 144.25 237.5 L 144.25 320.75 L 83.5 320.75 C 70 318.5 65.5 318.5 49.75 320.75 C 56.5 318.5 65.5 314 77.5 315.5 C 72.25 296 69 270 72.25 246.5 C 67 242 56.5 243.5 52 235.25 C 58 243.5 65.5 239.75 72.25 242 C 65.5 231.5 67.75 227 65.5 219.5 C 59.5 219.5 53.5 212 52 206 C 56.5 216.5 62.5 218 65.5 218 C 64 206 64 197 65.5 188 C 65.5 206 67 230 76.75 242 C 80.5 225.5 82 210.5 79 191 C 77.5 186.5 70 182 67.75 174.5 C 70 180.5 76 183.5 79 186.5 C 80.5 179 77.4998 171.5 76.75 163.25 C 80.5 177.5 82 191 83.5 207.5 C 88 203 91 191 94.75 183.5 C 91 192.5 89.5 204.5 83.5 210.5 C 83.5 224 83.5 233 80.5 242 C 89.5 230 92.5 219.5 97 199.25 C 95.5 213.5 94 216.5 92.5 224 C 95.5 225.5 101.5 216.5 106 215 C 100 219.5 95.5 225.5 92.5 227 C 89.5 237.5 83.5 242 82 246.5 C 89.5 246.5 100 237.5 104.5 230 C 98.5 243.5 85 249 82 249 C 73 253 82 303 89.5 315.5 C 99.25 314 108.25 316.25 117.25 320.75 C 103.75 318.5 90.25 318.5 83.5 320.75 C 70 318.5 65.5 318.5 49.75 320.75 C 56.5 318.5 65.5 314 77.5 315.5 C 72.25 296 69 270 72.25 248.75 C 63.25 251 52 246.5 49.75 242 C 47.5 237.5 47.5 230.75 52 228.5 C 53.5002 227.75 61 224 54.25 217.25 C 47.5 210.5 47.5 201.5 49.75 199.25 C 54.25 194.75 49.75 190.25 54.25 185.75 C 56.5 181.25 61 188 58.75 176.75 C 58.75 170 63.25 174.5 65.5 167.75 C 67.75 156.5 76.75 152 81.25 154.25 C 88 156.5 85.75 166.25 92.5 170 C 99.25 172.25 101.5 176.75 101.5 181.25 C 99.25 194.75 106 188 106 197 C 106 203.75 112.75 208.25 110.5 219.5 C 108.25 230.75 115 235.25 106 242 C 101.5 244.25 92.5 255.5 83 249" />
                 </g>
             </svg>
+            <img class="star" style="width:400px; right: 550px; top: 60px; z-index: -4;" src="images/Measurement_Square.JPG" alt="Portfolio Item">
+            <img class="star" style="width:400px; right: 70px; top: 40px;" src="images/groupme_figma.jpg" alt="Portfolio Item">
         </div>
     </div>
 </div>
@@ -86,14 +121,24 @@
     <div class="section">
         <div class="section-text star">
             <h1 style="margin:0">Engineering</h1>
-            <p> for a better future</p>
+            <p>for a better future</p>
         </div>
         <div class="svg-container">
-            <svg class="mySVG">
-                <g class="SVGgroup">
+            <svg class="mySVG" height="100%" style="right:80px">
+                <defs>
+                    <filter id="f1" x="0px" y="0px" width="200%" height="200%" filterUnits="userSpaceOnUse">
+                      <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
+                      <feColorMatrix result = "matrixOut" in = "offOut" type = "matrix" values = "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+                      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="5" />
+                      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                    </filter>
+                </defs> 
+                <g class="SVGgroup" filter="url(#f1)">
                     <path fill="none" stroke="black" stroke-width="2" stroke-linecap="round" class="draw-2" d="M 75.5 212.5 C 41 209.5 32 229 26 247 C 23 224.5 30.5 205 53 191.5 C 39.5 148 30.5 85 71 38.5 C 71 28 78.5 23.5 78.5 7 C 78.5 23.5 86 28 86 38.5 C 122 86.5 110 152.5 95 191.5 C 117 201 128 223 120.5 247 C 116 227.5 105.5 209.5 75.5 212.5 C 69.5 206.5 63.5 203.5 54.5 203.5 C 62 202 68 202 74 206.5 C 71 193 68 181 57.5 170.5 C 65 176.5 71 182.5 74 194.5 C 75.5 173.5 66.5 158.5 69.5 136 C 71 128.5 71 127 74 119.5 C 71 128.5 66.5 131.5 65 131.5 C 65 128.5 66.5 122.5 72.5 118 C 68 122.5 62 127 57.5 125.5 C 59 121 66.5 118 71 116.5 C 65 119.5 59 118 56 116.5 C 59 113.5 68 113.5 71 115 C 65 113.5 59 112 57.5 107.5 C 60.5 106 69.5 109 72.5 113.5 C 68 109 63.5 104.5 65 100 C 69.5 100 72.5 107.5 74 112 C 71 106 71 101.5 72.5 98.5 C 75.5 100 77 106 75.5 112 C 75.5 107.5 78.5 100 81.5 100 C 83 103 81.5 109 77 113.5 C 81.5 107.5 86 106 90.5 106 C 89 112 81.5 115 78.5 115 C 84.5 113.5 90.5 113.5 92 116.5 C 90.5 118 83 118 78.5 116.5 C 84.5 118 89 122.5 89 125.5 C 86 127 80 122.5 77 118 C 80 122.5 84.5 125.5 84.5 131.5 C 81.5 131.5 77 125.5 75.5 119.5 C 78.5 127 78.5 130 77 133 C 74 130 72.5 125.5 74 119.5 C 71 131.5 69.5 142 71 152.5 C 74 166 78.5 181 77 194.5 C 80 184 86 176.5 93.5 170.5 C 81.5 184 78.5 194.5 77 206.5 C 83 202 89 202 95 203.5 C 87.5 203.5 81.5 206.5 75.5 212.5" />
                 </g>
             </svg>
+            <img class="star" style="width:400px; right: 450px; top: 60px; z-index: -4;" src="images/flumenergy_pics.jpg" alt="Portfolio Item">
+            <img class="star" style="width:300px; right: 70px; top: -40px;" src="images/partial_iteration.jpeg" alt="Portfolio Item">
         </div>
     </div>
 </div>
@@ -109,11 +154,21 @@
             <!-- <h1 style="margin: 0;"><a style="padding-left:0px" href="contact.html">Contact me</a><span class="half-fade"> to get in touch</span></h1> -->
         </div>
         <div class="svg-container">
-            <svg class="mySVG">
-                <g class="SVGgroup">
+            <svg class="mySVG" height="100%" style="right:100px">
+                <defs>
+                    <filter id="f1" x="0px" y="0px" width="200%" height="200%" filterUnits="userSpaceOnUse">
+                      <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
+                      <feColorMatrix result = "matrixOut" in = "offOut" type = "matrix" values = "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+                      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="5" />
+                      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                    </filter>
+                </defs> 
+                <g class="SVGgroup" filter="url(#f1)">
                     <path fill="none" stroke="black" stroke-width="2" stroke-linecap="round" class="draw-3" d="M 142.5 240 C 102 241.5 57 241.5 25.5 240 C 18 234 18 219 25.5 214.5 C 36 210 60 202.5 84 195 C 106.5 201 128 200 134 199 C 128 200 106.5 201 84 195 C 96 162 87 129 91.5 106.5 C 87 136 86 165 77 197 C 68 200 65 201 55 204 C 71 179 70 93 78 79.5 C 82.5 73.5 96 78 107 73 C 117 75 127.5 75 135 72 C 127.5 75 117 75 107 73 C 111 69 111 66 110 63 C 106 60 102 48 101 37 L 102 37 L 102 44 C 107 43 113 43 118 44 L 118 40 L 125 40 L 125 44 C 125 46 127 49 125 50 C 121 48 122 52 123 53 C 126 53 129 53 132 53 C 126 60 117 60 112 53 C 116 53 118 53 123 53 C 122 52 121 48 125 50 C 127 49 125 46 125 44 C 130 43 136 42 140 44 L 141 37 C 135 35 131 35 125 37 L 125 40 L 118 40 L 118 37 C 111 34 108 35 102 37 L 102 40 L 100 33 C 97 29 96 26 99 24 C 102 19.5 100 12 109 17 C 118 20 113 8 121 16 C 125 18 127 9 137 21 C 140 24 135 12 143 23 C 141 22.5 146 39 141 31 C 133 18 135 30 132 27 C 124.5 16.5 128 32 121 28 C 108 15 116 29 108 29 C 99 22 101 40 99 36 C 96 32 101 21 104 22 C 114 24 102 10 113 14 C 117 18 117 23 122 21 C 126 17 121 5 128 18 C 137 34 126 4 134 16 C 138 17 135 8 142 19 C 145 29 130 23 141 31 C 139 50 137 59 132 63 C 128 68 113 68 110 63 C 113 68 128 68 132 63 C 132 66 132 69 135 72 C 144 78 159 73.5 162 78 C 168 90 169.5 97.5 174 117 C 169.5 111 153 111 148.5 117 C 150 108 148.5 105 148.5 103.5 C 148.5 105 150 111 148.5 117 C 147 120 147 123 147 124.5 L 134 199 L 147 124.5 C 147 154.5 147 184.5 144 213 C 123 213 96 211.5 72 214.5 C 96 211.5 123 213 144 213 L 144 213 C 142.5 226.5 142.5 235.5 142.5 246 C 142.5 255 142.5 259.5 145 263 C 150 271 161 270 168 266 C 172.5 259.5 163.5 252 163 240 C 157 238 149 238 142.5 238.5 C 149 238 157 238 163 240 C 168 239 171.1667 242 175 243 C 189 247 188 223 181 218 C 176 214 173 217 167 215 C 165 224 164 232 163 240 C 168 202.5 178.5 166.5 174 117 C 177 145 180 173 181 201 C 185 201 187 200 190 199 C 189 200 188 201 182 204 C 189 202 189 202 191 202 C 190.6667 203 189 204 183 206 C 189.3333 205 190.6667 205 192 205 C 189 206.3333 186 207 183 209 C 184 211 187 210.3333 189 211 C 185.3333 212 182 214 178 213 C 175 212 170 212 168 209" />
                 </g>
             </svg>
+            <img class="star" style="width:250px; right: 450px; top: -60px; z-index: -4;" src="images/gesture.jpg" alt="Portfolio Item">
+            <img class="star" style="width:250px; right: 70px; top: -40px;" src="images/profilepic.JPG" alt="Portfolio Item">
         </div>
     </div>
 </div>
@@ -159,8 +214,8 @@ if (window.innerWidth > 992) {
                     var svggroup = document.getElementsByClassName("SVGgroup");
                     var svgheight = svggroup[i].getBoundingClientRect().height;
                     // Add 10px to the height of the group so the container doesn't cut anything off
-                    actualsvg[i].style.height = (+svgheight +20) + "px";
-                    svgcont[i].style.height = (+svgheight +20) + "px";
+                    actualsvg[i].style.height = (+svgheight +30) + "px";
+                    svgcont[i].style.height = (+svgheight +30) + "px";
                     // Check the height of the container if you want to
                     var svgcontheight = svgcont[i].getBoundingClientRect().height;
                     //console.log(i + " " + svgcontheight);

@@ -1,7 +1,15 @@
 body {
     padding: auto;
     background: rgb(95,145,94);
-background: linear-gradient(0deg, rgba(95,145,94,1) 0%, rgba(255,255,255,1) 100%);
+background: linear-gradient(0deg, rgba(95,145,94,1) 0%, rgba(255,255,255,1) 90%, white 100%);
+}
+
+img {
+    position: absolute;
+    z-index: -3;
+    overflow: visible;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -21,7 +29,6 @@ a:hover {
 
 section {
   margin: 80px 0 80px 0;
-  
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap:  32px 32px;
@@ -52,30 +59,6 @@ section h1 {
         30%{opacity:0}
         100%{opacity:1}
     }
-
-/*Fading on scroll*/
-  .slidingtext {
- overflow: hidden;
- position: relative;	
- animation: slidingtext 5s ease-out;
-}
-/* Move it (define the animation) */
-@keyframes slidingtext {
- 0%   {transform: translate(-200%,300%);
-  		opacity: 0%;
-        font-size: 50px;}
- 25% {transform: translate(-50%,300%);
-  		opacity: 0%;}
- 30% {transform: translateX(0%,300%); 
-  		opacity: 50%;}
-    50% { transform: translateY(300%);
-  		opacity: 100%;}
-    75% {transform: translateY(300%); 
-  		}
-    100% {transform: translateY(0%); 
-        font-size: 40px;
-  		}
-}
 
 nav {
     animation: shadowFade 5.5s ease-out;
@@ -108,11 +91,130 @@ a.nav-pages:hover {
     100% {opacity: 100%;}
 }
 
-  .half-fade {
+  .slidingtext {
+ overflow: hidden;
+ position: relative;	
+ animation: slidingtext 5s ease-out;
+}
+
+@keyframes slidingtext {
+ 0%   {transform: translate(-200%,300%);
+  		opacity: 0%;
+        font-size: 50px;}
+ 25% {transform: translate(-50%,300%);
+  		opacity: 0%;}
+ 30% {transform: translateX(0%,300%); 
+  		opacity: 50%;}
+    50% { transform: translateY(300%);
+  		opacity: 100%;}
+    75% {transform: translateY(300%); 
+  		}
+    100% {transform: translateY(0%); 
+        font-size: 40px;
+  		}
+}
+
+.mynameis {
+ overflow: hidden;
+ position: relative;	
+ animation: mynameisanimate 5s ease-out;
+ animation-fill-mode: forwards;
+ margin: 0 0 0 30px;
+}
+
+@keyframes mynameisanimate {
+ 0%   {transform: translateY(-200%);
+  		opacity: 0%;}
+ 25% {transform: translateY(-200%);
+  		opacity: 100%;}
+ 30% {transform: translateY(-200%); 
+  		opacity: 100%;}
+    50% { transform: translateY(-200%);
+  		opacity: 100%;}
+    75% {transform: translateY(-200%); 
+  		opacity: 100%;}
+    80% {transform: translateY(-200%); 
+        opacity: 0%;}
+    100% {transform: translateY(-200%); 
+        opacity: 0%;}
+}
+
+.imallabout {
+ overflow: hidden;
+ position: relative;	
+ animation: imallaboutanimate 10s ease-out;
+ animation-fill-mode: forwards;
+ margin: 0 0 0 30px;
+}
+
+@keyframes imallaboutanimate {
+ 0%   {transform: translateY(-150%);
+  		opacity: 0%;}
+ 12.5% {transform: translateY(-150%);
+  		opacity: 0%;}
+ 15% {transform: translateY(-150%); 
+  		opacity: 0%;}
+    25% { transform: translateY(-150%);
+  		opacity: 0%;}
+    37.5% {transform: translateY(-150%); 
+  		opacity: 0%;}
+    40% {transform: translateY(-150%); 
+        opacity: 0%;}
+    45% {transform: translateY(-150%); 
+        opacity: 0%;}
+    50% {transform: translateY(-150%); 
+        opacity: 100%;}
+    90% {transform: translateY(-150%); 
+        opacity: 100%;}
+    100% {transform: translateY(-150%); 
+        opacity: 0%;}
+}
+
+.downanimator {
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    vertical-align: middle;
+    margin: auto;
+    z-index: -10;
+}
+
+.fallingarrow {
+    display: block;
+    margin: 20px;
+    height: 75px;
+    width: 60px;
+    animation: arrowfall 10s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes arrowfall {
+ 0%   {transform: translateY(-100%);
+     opacity: 0%;}
+ 50%    {transform: translateY(-100%);
+     opacity: 0%;}
+ 60% {transform: translateY(-100%);
+  		opacity: 0%;}
+ 78% {transform: translateY(-100%); 
+  		opacity: 0%;}
+    79% {transform: translateY(-50%); 
+  		opacity: 0%;}
+    80% { transform: translateY(0%);
+  		opacity: 100%;}
+    85% {transform: translateY(250%); 
+  		opacity: 100%;}
+    90% {transform: translateY(500%); 
+        opacity: 0%;}
+    100% {transform: translateY(500%); 
+        opacity: 0%;}
+}
+
+.half-fade {
       color: white;
     opacity: 30%;
     animation: half-fade-in 2s ease-out;
   }
+
   @keyframes half-fade-in {
  0%   {opacity: 0%;}
  100% {opacity: 30%;}
@@ -144,8 +246,7 @@ section {
 .section {
     position: sticky;
     top: 30%;
-    border: 1px solid transparent;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center; 
     justify-content: space-between;
@@ -165,17 +266,23 @@ section {
     right: 5%;*/
     width: 400px;
     height: 350px;
+    
+    position: absolute;
+    z-index: -1;
+    overflow: visible;
+    right: 0;
 }
 
 .svgGroup {
     top: 0;
     margin: 0;
+    overflow: visible;
 }
 
 .svg-container {
+    overflow: visible;
     margin: 0;
     width: 40%;
-    float: right;
 }
 
 @media (max-width: 992px)  {

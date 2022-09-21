@@ -39,6 +39,19 @@ video {
     border-radius: 0;
 }
 
+iframe {
+    float: right;
+    padding: 5px 50px 20px 30px;
+    /* display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    right: 30px;
+    top: 30px; */
+  	max-width: 50%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
 .pagetitle {
     font-size: 52px;
     color: white;

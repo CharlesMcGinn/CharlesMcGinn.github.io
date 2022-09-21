@@ -18,14 +18,37 @@ img {
     right: 30px;
     top: 30px; */
     width: 600px;
-  	max-width: 50vw;
+  	max-width: 50%;
     height: auto;
     object-fit: cover;
     border-radius: 0;
 }
 
+video {
+    float: right;
+    padding: 5px 50px 20px 30px;
+    /* display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    right: 30px;
+    top: 30px; */
+    height: 600px;
+  	max-width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.pagetitle {
+    font-size: 52px;
+    color: white;
+    font-family: Raleway;
+    font-weight: bold;
+    margin: 20px 0 0 50px;
+}
+
 .titletext {
-    font-size: 40px;
+    font-size: 32px;
     color: white;
     font-family: Raleway;
     font-weight: bold;

@@ -7,7 +7,7 @@ background: linear-gradient(0deg, rgba(95,145,94,1) 0%, rgba(255,255,255,1) 90%,
 img {
     position: absolute;
     z-index: -3;
-    overflow: visible;
+    overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -43,22 +43,6 @@ section h1 {
     width: 100%;
     
 }
-      
-.star {
-        visibility: hidden;
-    }
-
-.fadeIn {
-        -webkit-animation: animat_show 0.8s;
-        animation: animat_show 0.8s;
-        visibility: visible !important;
-    }
-
-    @-webkit-keyframes animat_show{
-        0%{opacity:0}
-        30%{opacity:0}
-        100%{opacity:1}
-    }
 
 nav {
     animation: shadowFade 5.5s ease-out;

@@ -3,6 +3,7 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="images/Favicon.png?">
       <link rel = "stylesheet" type = "text/css" href = "fonts.css"/>
       <link rel = "stylesheet" type = "text/css" href = "style.css"/>
       <link rel = "stylesheet" type = "text/css" href = "indexpage.css"/>
@@ -368,21 +369,61 @@ document.addEventListener("mouseleave", function(e){
     function navMove() {
       document.getElementById("MainNav").style.transform = "translateY(-70%)";
       document.getElementById("MainNav").style.animation = "navSlide 1s ease-in-out";
-        console.log("hello");
+        // console.log("hello");
     }
 </script>
 
 <!--Actual fading stuff?-->
 <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script>
+    var i = 0;
     function showImages(el) {
         var windowHeight = jQuery( window ).height();
         $(el).each(function(){
-            var thisPos = $(this).offset().top;
+            if($(this).css('visibility') != 'visible'){
+                // console.log('hidden');
+                var thisPos = $(this).offset().top;
+                var thisPosx = $(this).offset().right;
+                var topOfWindow = $(window).scrollTop();
+                if (topOfWindow + windowHeight - 200 > thisPos ) {
 
-            var topOfWindow = $(window).scrollTop();
-            if (topOfWindow + windowHeight - 200 > thisPos ) {
-                $(this).addClass("fadeIn");
+                    // Math.floor(Math.random() * (max - min + 1) + min);
+                    // console.log('ranYDis is ' + ranYDis);
+                    
+                    if(i%2==0){
+                        var ranYDis = Math.floor(Math.random() * (40 - 20 + 1) + 20);
+                        var ranXDis = Math.floor(Math.random() * (40 - 20 + 1) + 20);
+                    } else {
+                        var ranYDis = Math.floor(Math.random() * (-20 + 40 + 1) - 40);
+                        var ranXDis = Math.floor(Math.random() * (-20 + 40 + 1) - 40);
+                    }
+                    
+                    if($(this).is('img')){
+                        // console.log($(this).offset());
+                        // console.log('thisPos is ' + thisPos);
+                        $(this).offset().right = thisPosx + ranXDis + 'px';
+                        $(this).offset().top = thisPos + ranYDis + 'px';
+                        // console.log('Second top is ' + $(this).offset().top);
+                    }
+                    
+                    $(this).addClass("fadeIn");
+
+                    if($(this).is('img')){
+                        // console.log('ranYDis is ' + ranYDis);
+                        $(this).css('transform', 'translate(' + ranXDis + 'px, ' + ranYDis + 'px)');
+                        $(this).css({transition : 'transform 1s ease-in-out'});
+                        // console.log('The new top is ' + $(this).offset().top);
+                    }
+
+                    
+
+                    // console.log(i);
+                }
+
+                if($(this).is('img')){
+                    i = i + 1;
+                    // console.log(i);
+                   }
             }
         });
     }

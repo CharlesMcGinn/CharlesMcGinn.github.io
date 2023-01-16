@@ -25,12 +25,14 @@ p {
 }
 
 img {
+    position: relative;
     float: right;
     padding: 5px 50px 20px 30px;
     height: auto;
     object-fit: cover;
-    border-radius: 0;
+    border-radius: 20px;
     width: 300px;
+    overflow: hidden;
 }
 
 .titletext {

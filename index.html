@@ -413,6 +413,8 @@ document.addEventListener("mouseleave", function(e){
                         $(this).css('transform', 'translate(' + ranXDis + 'px, ' + ranYDis + 'px)');
                         $(this).css({transition : 'transform 1s ease-in-out'});
                         // console.log('The new top is ' + $(this).offset().top);
+                        i = i + 1;
+                        // console.log(i);
                     }
 
                     
@@ -420,10 +422,7 @@ document.addEventListener("mouseleave", function(e){
                     // console.log(i);
                 }
 
-                if($(this).is('img')){
-                    i = i + 1;
-                    // console.log(i);
-                   }
+                
             }
         });
     }

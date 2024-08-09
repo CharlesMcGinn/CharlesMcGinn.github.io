@@ -47,7 +47,7 @@ nav {
     top: 0;
     z-index: 30;
     font-family: Raleway;
-	font-size: 40px;
+	font-size: max(3vw, 16px);
 	font-weight: 600;
     line-height: 1.2;
     padding: 10px 30px 10px 30px;
@@ -80,6 +80,12 @@ p {
     position: relative;
     padding: 0 0 0 0;
     font-family: 'EB Garamond', serif;
+}
+
+ul {
+  position: relative;
+  padding: 40 0 0 0;
+  font-family: 'EB Garamond', serif;
 }
 
 section h1 {

@@ -4,7 +4,7 @@
 //import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/controls/OrbitControls.js';
 //import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/controls/OrbitControls.js';
 import gsap from 'gsap';
-import * as THREE from 'three';
+import * as THREE from './example/three.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; // for loading models
 import * as CANNON from 'cannon-es'; // npm install cannon-es --save-dev
 import CannonDebugger from 'cannon-es-debugger'; // npm install cannon-es-debugger

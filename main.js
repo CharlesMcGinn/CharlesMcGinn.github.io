@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import * as THREE from './example/three.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; // for loading models
 import * as CANNON from 'cannon-es'; // npm install cannon-es --save-dev
-//import CannonDebugger from 'cannon-es-debugger'; // npm install cannon-es-debugger
+import CannonDebugger from 'cannon-es-debugger'; // npm install cannon-es-debugger
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls' // moving object around with mouse
 
 const raycaster = new THREE.Raycaster(); // for mouse move tracking (points at scene from mouse, it knows if its hitting object)

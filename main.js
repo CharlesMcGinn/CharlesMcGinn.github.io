@@ -289,7 +289,7 @@ physicsWorld.addBody(leftWallBody); // add the platform to the world
 
 let frame = 0; // for counting frames for x and y movement on cos function
 
-const Debugger = new CannonDebugger(scene, physicsWorld, { }); // initiate debugging and adding green grid to every object
+//const Debugger = new CannonDebugger(scene, physicsWorld, { }); // initiate debugging and adding green grid to every object
 
 function animate() { // animate the plane/mesh
   requestAnimationFrame(animate);

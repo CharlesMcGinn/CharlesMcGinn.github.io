@@ -4,7 +4,7 @@
 //import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/controls/OrbitControls.js';
 //import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/controls/OrbitControls.js';
 import gsap from 'https://cdn.skypack.dev/gsap';
-import * as THREE from './example/three.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.171.0/build/three.module.js';
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/loaders/GLTFLoader.js'; // for loading models
 import * as CANNON from 'https://unpkg.com/cannon-es@0.19.0/dist/cannon-es.js'; // npm install cannon-es --save-dev
 //import CannonDebugger from 'cannon-es-debugger'; // npm install cannon-es-debugger

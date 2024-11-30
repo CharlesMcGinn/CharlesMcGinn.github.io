@@ -6,8 +6,8 @@
 import gsap from 'https://cdn.skypack.dev/gsap';
 import * as THREE from './example/three.js';
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/loaders/GLTFLoader.js'; // for loading models
-import * as CANNON from 'cannon-es'; // npm install cannon-es --save-dev
-import CannonDebugger from 'cannon-es-debugger'; // npm install cannon-es-debugger
+import * as CANNON from 'https://unpkg.com/cannon-es@0.19.0/dist/cannon-es.js'; // npm install cannon-es --save-dev
+//import CannonDebugger from 'cannon-es-debugger'; // npm install cannon-es-debugger
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/controls/OrbitControls.js' // moving object around with mouse
 
 const raycaster = new THREE.Raycaster(); // for mouse move tracking (points at scene from mouse, it knows if its hitting object)
